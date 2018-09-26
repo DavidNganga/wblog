@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 import datetime as dt
+from .forms import PostForm
+from .models import Blog
 
 # Create your views here.
 def welcome(request):
