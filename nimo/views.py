@@ -16,3 +16,8 @@ def post(request):
     else:
         form = PostForm()
     return render(request, 'post.html', {"form":form})
+
+def blog(request):
+    pics=Post.objects.all()
+
+    return render(request, 'welcome.html', {"pics":pics})

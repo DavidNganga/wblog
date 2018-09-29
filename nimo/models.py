@@ -8,3 +8,11 @@ class Blog(models.Model):
      videofile= models.FileField(upload_to='videos/', null=True)
      image= models.ImageField(upload_to = 'images/',null = True)
      event_date = DateTimeField(input_formats=["%d %b %Y %H:%M:%S %Z"])
+
+     @classmethod
+     def get_all(cls):
+        pics = cls.objects.all()
+        return pics
+
+     def __str__(self):
+        return self.caption + str(self.videofile)
